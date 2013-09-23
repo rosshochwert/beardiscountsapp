@@ -1,0 +1,36 @@
+<div data-role="page">
+    
+	<div data-role="header" class="ui-state-persist" data-position="fixed">
+    <h1>Deals</h1>
+	</div> 
+  <div data-role="content">
+          <ul data-role="listview" data-filter="true">
+            <% json = get_res() %>
+            <% json.each do |discount| %>  
+              <%if discount['picture'] == "/images/original/missing.png" %>
+              <% logo = "/public/images/missing.png"%>
+              <%else%>  
+              <% logo = discount['picture'] %>
+              <%end%>
+              <%if discount['featured']%>
+                <li>
+                <a href="<%= url_for :action => :show, :query => {:name => discount['name'], :description => discount['description'], :location=> discount['location'], :image => logo, :phone => discount['phone']} %>" data-transition="slide" >
+                
+                <h3 style="white-space:normal">Featured: <%=discount['name'] %></h3>
+                <p style="white-space:normal"><%=discount['location'] %></p>
+                <p style="white-space:normal"><%=discount['description'] %></p>
+                  </a>
+              
+                </li>   
+                  <%else%>
+                <a href="<%= url_for :action => :show, :query => {:name => discount['name'], :description => discount['description'], :location=> discount['location'], :image => logo, :phone => discount['phone']} %>" data-transition="slide" >
+                <li>
+                 <h3 style="white-space:normal"><%=discount['name'] %></h3>
+                 <p style="white-space:normal"><%=discount['location'] %></p>
+                 <p style="white-space:normal"><%=discount['description'] %></p></a>
+                 </li>
+                 <%end%>
+                 
+              <%end%>
+    </ul>
+</div>

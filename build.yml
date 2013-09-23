@@ -1,0 +1,29 @@
+#sdk: "/Users/user/.rvm/gems/ruby-1.9.3-p429/gems/rhodes-4.0.0.beta.59"
+sdkversion: "4.0.0"
+name: "BearDiscountsUpdate"
+version: 1.0
+vendor: "rhomobile"
+build: "debug"
+bbver: 6.0
+applog: "rholog.txt"
+iphone:
+  configuration: "Release"
+  sdk: "iphonesimulator7.0"
+  provisionprofile: 
+  codesignidentity: 
+  entitlements: 
+  BundleIdentifier: "com.rhomobile.beardiscountsupdate"
+  BundleURLScheme: "beardiscountsupdate"
+  emulatortarget: "iphone"
+wp:
+  productid: "88e99970-fee5-0130-42a1-109adda9ca60"
+symbian:
+  uid: "0xe8930402"
+android:
+  version: "2.3.3"
+  capabilities: 
+extensions:
+  - json
+capabilities:
+  - gps
+  - network_state

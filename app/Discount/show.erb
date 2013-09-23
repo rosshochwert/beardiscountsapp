@@ -1,0 +1,27 @@
+<div data-role="page">
+
+  <div data-role="header" class="ui-state-persist" data-position="inline">
+    <h1>Deals</h1>
+    <a href="<%= url_for :action => :list %>"  data-theme="f" data-icon="arrow-l" data-transition="slide" data-direction="reverse">
+      Back
+    </a>
+  </div>
+
+      <div data-role="content">
+        <ul data-role="listview">
+        <li style="border-width: 0px;">
+          <img src="<%= @image%>" />
+          <h3 style="white-space:normal"><%=@name%></h3>
+          <p style="white-space:normal"><%= @location %></p>
+          <p style="white-space:normal"><%= @description %></p>
+  
+          <left><img src="/public/images/glyphs/glyphicons_169_phone.png" /><a href="tel:<%=@phone%>"><%= @phone %></a></left>
+          <br /> 
+          <left><img src="/public/images/glyphs/glyphicons_060_compass.png" /><a href="<%= url_for :action => :map_it, :query => {:name => @name, :location => @location, :description => @description }%>">Map It!</a></left>
+          <br />
+          <left><img src="/public/images/glyphs/glyphicons_049_star.png" /><a href="<%= url_for :action => :new, :query => {:name => @name, :description => @location, :location=> @description, :image => @image, :phone => @phone}%>">Favorite Me!</a></left>
+
+          </li>
+        </ul>
+        </div>
+</div>

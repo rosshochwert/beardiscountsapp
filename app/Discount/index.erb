@@ -1,0 +1,15 @@
+<div data-role="page">
+
+  <div data-role="header" class="ui-state-persist" data-position="inline">
+    <h1>Deals</h1>
+  </div>
+  
+  <div data-role="content">
+      <div class="content-primary"> 
+          <ul data-role="listview" data-filter="true" data-position="inline"></br>
+          <center>
+          <h3 style="white-space:normal">There was an error fetching the discounts. Please check your connection and try again.</h3>
+          <a href="<%=url_for :action => :refresh%>" data-role="button" data-icon="refresh" data-theme="c">Click Here to Refresh</a>
+          </center>
+  </div>
+</div>

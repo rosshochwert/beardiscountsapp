@@ -1,0 +1,45 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>New <%= @discount.title %></h1>
+    <a href="<%= url_for :action => :list %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :create %>">
+      <input type="hidden" name="id" value="<%= @discount.object %>"/>
+      <input type="hidden" name="image" value="<%= @image %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[name]" class="fieldLabel">Name</label>
+            <input type="text" id="discount[name]" name="discount[name]" value="<%= @name %>" />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[location]" class="fieldLabel">Location</label>
+            <input type="text" id="discount[location]" name="discount[location]" value="<%= @location %>" />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[phone]" class="fieldLabel">Phone</label>
+            <input type="text" id="discount[phone]" name="discount[phone]" value="<%= @phone %>" />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[description]" class="fieldLabel">Description</label>
+            <input type="text" id="discount[description]" name="discount[description]" value="<%= @description %>"  />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[note]" class="fieldLabel">Notes</label><br />
+              <input type="text" id="discount[note]" name="discount[note]" value="<%= @note %>" />
+          </div>
+      
+
+      <input type="submit" value="Create"/>
+    </form>
+  </div>
+
+</div>

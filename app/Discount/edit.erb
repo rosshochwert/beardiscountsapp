@@ -1,0 +1,46 @@
+<div data-role="page">
+
+  <div data-role="header" data-position="inline">
+    <h1>Edit <%= @discount.name %></h1>
+    <a href="<%= url_for :action => :favorite, :id => @discount.object %>" class="ui-btn-left" data-icon="back" data-direction="reverse">
+      Cancel
+    </a>
+    <a href="<%= url_for :action => :delete, :id => @discount.object %>" class="ui-btn-right" data-icon="delete" data-direction="reverse">
+      Delete
+    </a>
+  </div>
+
+  <div data-role="content">
+    <form method="POST" action="<%= url_for :action => :update %>">
+      <input type="hidden" name="id" value="<%= @discount.object %>"/>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[name]" class="fieldLabel">Name</label>
+            <input type="text" id="discount[name]" name="discount[name]" value="<%= @discount.name %>" <%= placeholder( "Name" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[location]" class="fieldLabel">Location</label>
+            <input type="text" id="discount[location]" name="discount[location]" value="<%= @discount.location %>" <%= placeholder( "Location" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[phone]" class="fieldLabel">Phone</label>
+            <input type="text" id="discount[phone]" name="discount[phone]" value="<%= @discount.phone %>" <%= placeholder( "Phone" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[description]" class="fieldLabel">Description</label>
+             <input type="text" id="discount[description]" name="discount[description]" value="<%= @discount.description %>" <%= placeholder( "Description" ) %> />
+          </div>
+      
+          <div data-role="fieldcontain">
+            <label for="discount[note]" class="fieldLabel">Notes</label><br />
+              <input type="text" id="discount[note]" name="discount[note]" value="<%= @discount.note %>" <%= placeholder( "Note" ) %> />
+          </div>
+      
+      <input type="submit" value="Update"/>
+    </form>
+  </div>
+
+</div>

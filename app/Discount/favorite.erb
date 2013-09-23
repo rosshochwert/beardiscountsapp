@@ -1,0 +1,25 @@
+<div data-role="page">
+
+	<div data-role="header" data-position="inline">
+    <h1>Favorites</h1>
+	</div>
+	
+  <div data-role="content">
+    <ul data-role="listview">
+    <% if @discounts %>
+      <% @discounts.each do |discount| %>
+          <li>
+            <a href="<%= url_for :action => :show_favorite, :id => discount.object %>">
+              <%= discount.name %><br />
+              <%= discount.description %>
+            </a>
+          </li>
+      <% end %>
+    </ul>
+    <% else %>
+    <p>You don't have any favorites yet!</p>
+    <% end %>
+    <p>Add favorites by viewing a discount and clicking the "Favorite Me!" button.</p>
+
+  </div>
+</div>

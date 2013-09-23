@@ -1,0 +1,8 @@
+rhodes_path='/Users/user/.rvm/gems/ruby-1.9.3-p429/gems/rhodes-4.0.0.beta.59'
+app_version='1.0'
+app_name='BearDiscountsUpdate'
+reload_app_changes=1
+debug_port=
+debug_host='127.0.0.1'
+platform='iphone'
+ext_path=/Users/user/.rvm/gems/ruby-1.9.3-p429/gems/rhodes-4.0.0.beta.59/lib/commonAPI/coreapi;/Users/user/.rvm/gems/ruby-1.9.3-p429/gems/rhodes-4.0.0.beta.59/lib/extensions/json;

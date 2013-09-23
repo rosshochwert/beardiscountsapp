@@ -1,0 +1,21 @@
+<div data-role="page">
+
+  <div data-role="header" class="ui-state-persist" data-position="inline">
+    <h1>Deals</h1>
+    <a href="<%= Rho::RhoConfig.start_path %>" class="ui-btn-left" data-icon="home" data-direction="reverse" <%= "data-ajax='false'" if is_bb6 %>>
+      Home
+    </a>
+  </div>
+
+      <div data-role="content">
+      <ul>
+          <li>Error: <%= Rho::RhoError.new(get_error()['error_code'].to_i).message%> </li>
+          <li>Please connect to the Internet and try again.</li>
+     
+        </ul>
+        </div>
+        
+        
+</div>
+
+
